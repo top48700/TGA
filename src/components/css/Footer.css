@@ -1,0 +1,8 @@
+.footer{
+    background: #056839;
+    justify-content: space-evenly;
+    display: flex;
+    height: 40%;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}

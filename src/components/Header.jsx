@@ -1,4 +1,4 @@
-import TGA from '../../public/TG-logo.png'
+import TGA from '/TG-logo.png'
 import '../components/css/Header.css'
 
 function Header() {
