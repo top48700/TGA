@@ -15,9 +15,9 @@ function Header() {
                     <ul className='nav-links'>
                         <li className='bg'><Link to="/">Home</Link></li>
                         <li className='bg'><Link to="/about-us">About Us</Link></li>
-                        <li className='bg'><Link to="/service"></Link>Service</li>
-                        <li className='bg'><Link to="/content"></Link>Content</li>
-                        <li className='bg'><Link to="/contact"></Link>Contact</li>
+                        <li className='bg'><Link to="/service">Service</Link></li>
+                        <li className='bg'><Link to="/content">Content</Link></li>
+                        <li className='bg'><Link to="/contact">Contact</Link></li>
                     </ul>
                 </nav>
             </div>

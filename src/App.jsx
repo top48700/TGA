@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Service from './pages/Service'
 import Content from './pages/Content'
-import Contact from './pages/Home'
+import Contact from './pages/Contact'
 
 function App() {
 

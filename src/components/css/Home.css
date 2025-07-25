@@ -33,14 +33,16 @@
     background-color: #056839;
     color: white;
 }
-.about-bg{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #056839;
-    border-radius: 0 0 20% 20%;
-    height: 120px;
+.about-bg {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* เปลี่ยนจาก center */
+  background-color: #056839;
+  border-radius: 0 0 20% 20%;
+  padding: 20px;
+  gap: 10px;
+  overflow: hidden;
 }
 .txt-about{
     display: flex;
@@ -67,7 +69,7 @@
   grid-template-columns: 1fr 6px 1fr;
   align-items: center;
   border-radius: 60px;
-  border: 2px solid #056839;
+  border: 8px solid #056839;
   margin: 60px 40px;
   background: white;
   height: auto;
@@ -102,10 +104,10 @@
 .service-card {
   display: flex;
   background: #8CC63E;
-  border-radius: 10px;
+  border-radius: 20px;
   height: 120px;
   width: 80%;
-  max-width: 500px;
+  max-width: 800px;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
@@ -114,7 +116,7 @@
 .detail{
   background: white;
   height: 100px;
-  width: 250px;
+  width: 510px;
   border-radius: 20px;
 }
 .img-container img{
@@ -122,7 +124,7 @@
   object-fit: cover;
   height: 100px;
   width: 200px;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 .exp-img img{
   width: 100%;
@@ -144,4 +146,15 @@
 .exp-img{
   position: relative;
   width: 100%;
+}
+.about-detail {
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.about-detail.expanded {
+  max-height: 1000px;
+  opacity: 1;
 }
