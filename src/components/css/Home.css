@@ -1,0 +1,147 @@
+.intro-content {
+  position: relative;
+  width: 100%;
+}
+
+.intro-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.8;
+}
+
+.intro-txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(40%, -50%);
+  color: gray;
+  text-align: center;
+  padding: 20px;
+}
+.btn-intro{
+    height: 40px;
+    width: 120px;
+    border-radius: 20px ;
+    font-weight: bold;
+    border-color: #056839;
+    color: #056839;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-intro:hover{
+    background-color: #056839;
+    color: white;
+}
+.about-bg{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #056839;
+    border-radius: 0 0 20% 20%;
+    height: 120px;
+}
+.txt-about{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    padding-top: 10px;
+}
+.btn-about{
+    height: 40px;
+    width: 120px;
+    border-radius: 20px ;
+    margin: 3px;
+    font-weight: bold;
+    border-color: black;
+    color: #056839;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-about:hover{
+    background-color: #056839;
+    color: white;
+}
+.our-service {
+  display: grid;
+  grid-template-columns: 1fr 6px 1fr;
+  align-items: center;
+  border-radius: 60px;
+  border: 2px solid #056839;
+  margin: 60px 40px;
+  background: white;
+  height: auto;
+  padding: 40px 0;
+}
+
+.left-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.left-dialog h1 {
+  font-size: 28px;
+}
+
+.v1 {
+  background-color: green;
+  width: 6px;
+  height: 100%;
+  justify-self: center;
+}
+
+.right-dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.service-card {
+  display: flex;
+  background: #8CC63E;
+  border-radius: 10px;
+  height: 120px;
+  width: 80%;
+  max-width: 500px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.detail{
+  background: white;
+  height: 100px;
+  width: 250px;
+  border-radius: 20px;
+}
+.img-container img{
+  display: flex;
+  object-fit: cover;
+  height: 100px;
+  width: 200px;
+  border-radius: 10px;
+}
+.exp-img img{
+  width: 100%;
+  height: 400px;
+  opacity: 0.6 ;
+}
+.exp-txt{
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  top: 35%;
+  left: 3%;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 90%;
+  font-size: 20px;
+}
+.exp-img{
+  position: relative;
+  width: 100%;
+}
