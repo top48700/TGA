@@ -17,7 +17,14 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    list-style: none;
 }
+
+.nav-links a {
+    text-decoration: none;
+    color: #056839;
+}
+
 .nav-links{
     font-size: 20px;
     font-weight: bold;
@@ -25,6 +32,7 @@
     color: #056839;
     list-style: none;
     display: flex;
+    list-style: none;
     /* gap: 40px; */
     margin: 20px 20px 0 0;
 }
