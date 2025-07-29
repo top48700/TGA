@@ -25,7 +25,15 @@ function Contact() {
                 </div>
 
                 <div className='map-wrapper'>
-                    <MapComponent />
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d968.6190118923337!2d100.694762!3d13.810429!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d63e4a9903ed5%3A0x49629d88083179c5!2zVEdBIC0g4LiX4Lij4Li04Lib4LmA4Lib4Li04LmJ4LilIOC4geC4o-C4teC4mSDguIHguLLguKPguJrguLHguI3guIrguLU!5e0!3m2!1sen!2sus!4v1753439274122!5m2!1sen!2sus"
+                        width="100%"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                 </div>
             </div>
         </>
