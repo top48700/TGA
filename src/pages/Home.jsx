@@ -14,6 +14,8 @@ import P4 from '/lrd-4.jpg'
 
 function Home() {
     const [selectedService, setSelectedService] = useState(null);
+    const [currentPage, setCurrentPage] = useState(0);
+    const itemsPerPage = 5;
 
     const services = [
         {
@@ -110,6 +112,41 @@ function Home() {
         partners[(index + 2) % partners.length],
     ];
 
+    // เมื่อเลือกบริการใหม่ให้รีเซ็ตหน้าเป็น 0
+    const handleServiceSelect = (service) => {
+        setSelectedService(service);
+        setCurrentPage(0);
+    };
+
+    // คำนวณจำนวนหน้าทั้งหมด
+    const getTotalPages = () => {
+        if (!selectedService || !Array.isArray(selectedService.detail)) return 1;
+        return Math.ceil(selectedService.detail.length / itemsPerPage);
+    };
+
+    // ดึงข้อมูลสำหรับหน้าปัจจุบัน
+    const getCurrentPageItems = () => {
+        if (!selectedService || !Array.isArray(selectedService.detail)) return selectedService?.detail || [];
+        
+        const startIndex = currentPage * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        return selectedService.detail.slice(startIndex, endIndex);
+    };
+
+    // เปลี่ยนหน้า
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const handleNextPage = () => {
+        const totalPages = getTotalPages();
+        setCurrentPage((prev) => (prev + 1) % totalPages);
+    };
+
+    const handlePrevPage = () => {
+        const totalPages = getTotalPages();
+        setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+    };
 
     return (
         <>
@@ -159,16 +196,51 @@ function Home() {
                                 <h2 className="service-title">{selectedService.title}</h2>
 
                                 {Array.isArray(selectedService.detail) ? (
-                                    <ul className="bullet-list">
-                                        {selectedService.detail.map((item, index) => (
-                                            <li key={index}>{item}</li>
-                                        ))}
-                                    </ul>
+                                    <>
+                                        <ul className="bullet-list">
+                                            {getCurrentPageItems().map((item, index) => (
+                                                <li key={currentPage * itemsPerPage + index}>{item}</li>
+                                            ))}
+                                        </ul>
+                                        
+                                        {/* Pagination Controls */}
+                                        {getTotalPages() > 1 && (
+                                            <div className="pagination-controls">
+                                                <button 
+                                                    className="pagination-btn" 
+                                                    onClick={handlePrevPage}
+                                                    disabled={currentPage === 0}
+                                                >
+                                                    ‹ ก่อนหน้า
+                                                </button>
+                                                
+                                                <div className="page-indicators">
+                                                    {Array.from({ length: getTotalPages() }, (_, i) => (
+                                                        <button
+                                                            key={i}
+                                                            className={`page-indicator ${currentPage === i ? 'active' : ''}`}
+                                                            onClick={() => handlePageChange(i)}
+                                                        >
+                                                            {i + 1}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                                
+                                                <button 
+                                                    className="pagination-btn" 
+                                                    onClick={handleNextPage}
+                                                    disabled={currentPage === getTotalPages() - 1}
+                                                >
+                                                    ถัดไป ›
+                                                </button>
+                                            </div>
+                                        )}
+                                    </>
                                 ) : (
                                     <p>{selectedService.detail}</p>
                                 )}
 
-                                <img src={selectedService.image} alt={selectedService.title} className="preview-img" />
+                                {/* <img src={selectedService.image} alt={selectedService.title} className="preview-img" /> */}
                             </div>
                         ) : (
                             <h1>บริการของเรา</h1>
@@ -181,7 +253,7 @@ function Home() {
                     <div className='right-dialog'>
                         <div className="service-grid">
                             {services.map((service, idx) => (
-                                <div className="service-card" key={idx} onClick={() => setSelectedService(service)}>
+                                <div className="service-card" key={idx} onClick={() => handleServiceSelect(service)}>
                                     <img src={service.image} alt={service.title} className="service-img-top" />
                                     <h3 className="service-title-text">{service.title}</h3>
                                 </div>
@@ -207,13 +279,13 @@ function Home() {
             <section className="partner">
                 <h2 className='partner-h2'>Our Partner</h2>
                 <div className="partner-wrapper">
-                    <button onClick={handlePrev} style={{ fontSize: 80 }}>{'<'}</button>
+                    <button onClick={handlePrev} style={{ fontSize: 40 }}>{'<'}</button>
                     <div className="partner-logos">
                         {visiblePartners.map((partner, idx) => (
                             <img key={idx} src={partner.src} alt={partner.alt} />
                         ))}
                     </div>
-                    <button onClick={handleNext} style={{ fontSize: 80 }}>{'>'}</button>
+                    <button onClick={handleNext} style={{ fontSize: 40 }}>{'>'}</button>
                 </div>
             </section>
 

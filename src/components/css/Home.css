@@ -23,7 +23,7 @@
   color: gray;
   text-align: center;
   padding: 20px;
-  width: 50%;
+  width: 90%;
   box-sizing: border-box;
 }
 
@@ -46,7 +46,6 @@
 }
 
 .about-bg {
-  font-size: 18px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -157,10 +156,10 @@
 
 .service-img-top {
   width: 100%;
-  height: 150px;
+  height: 140px;
   object-fit: cover;
   border-radius: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .service-title-text {
@@ -169,17 +168,15 @@
   padding: 15px 10px;
   border-radius: 15px;
   text-align: center;
-  width: 95%;
-  font-size: 20px;
+  width: 100%;
+  font-size: 1rem;
   font-weight: bold;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 50px;
-  margin: auto;
-  /* margin-top: auto;
-  margin-bottom: auto; */
+  margin-top: auto;
 }
 
 
@@ -237,6 +234,68 @@
   opacity: 1;
 }
 
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.pagination-btn {
+  background: white;
+  color: #056839;
+  border: 2px solid #056839;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #056839;
+  color: white;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-indicators {
+  display: flex;
+  gap: 8px;
+}
+
+.page-indicator {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #056839;
+  background: white;
+  color: #056839;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.page-indicator:hover {
+  background: #056839;
+  color: white;
+}
+
+.page-indicator.active {
+  background: #056839;
+  color: white;
+}
+
 .service-display {
   display: flex;
   flex-direction: column;
@@ -245,7 +304,7 @@
   text-align: center;
   width: 100%;
   max-width: 800px;
-  height: 850px;
+  height: 600px;
   overflow-y: auto;
   background: #056839;
   border-radius: 10%;
@@ -277,10 +336,11 @@
 .bullet-list {
   text-align: left;
   padding-left: 20px;
-  margin-bottom: 30px;
+  max-width: 600px;
+  /* margin-bottom: 30px; */
   font-size: 18px;
   color: white;
-  line-height: 1.6;
+  line-height: 1.4;
   list-style-type: disc;
   max-height: auto;
 }
@@ -364,7 +424,7 @@
   .intro-txt {
     transform: translate(-50%, -50%);
     padding: 10px;
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .btn-intro, .btn-about {
@@ -421,9 +481,24 @@
   
   .service-card {
     flex-direction: column;
-    padding: 15px;
-    min-height: auto; /* Remove minimum height restrictions */
-    height: auto; /* Allow dynamic height */
+    padding: 10px;
+    gap: 8px;
+    min-height: auto;
+    height: auto;
+    max-height: 280px;
+  }
+  
+  .service-img-top {
+    height: 120px;
+    margin-bottom: 10px;
+  }
+  
+  .service-title-text {
+    padding: 8px 6px;
+    font-size: 15px;
+    min-height: 35px;
+    border-radius: 10px;
+    font-weight: 600;
   }
   
   .img-container img {
@@ -456,6 +531,22 @@
     min-height: 400px;
     border-radius: 20px;
     padding: 15px;
+  }
+  
+  .pagination-controls {
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .pagination-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .page-indicator {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
   }
   
   .service-title {
@@ -531,15 +622,16 @@
   }
   
   .service-title-text {
-    padding: 12px 8px;
-    font-size: 0.9rem;
-    min-height: 45px;
-    border-radius: 12px;
+    padding: 8px 6px;
+    font-size: 14px;
+    min-height: 35px;
+    border-radius: 10px;
+    font-weight: 600;
   }
   
   .service-grid {
-    gap: 15px; /* Reduce gap for smaller screens */
-    padding: 0 5px; /* Further reduce padding */
+    gap: 12px;
+    padding: 0 8px;
   }
   
   .img-container img {
@@ -559,6 +651,22 @@
   .service-display {
     padding: 10px;
     border-radius: 15px;
+  }
+  
+  .pagination-controls {
+    gap: 8px;
+    margin: 10px 0;
+  }
+  
+  .pagination-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+  
+  .page-indicator {
+    width: 25px;
+    height: 25px;
+    font-size: 11px;
   }
   
   .service-title {
