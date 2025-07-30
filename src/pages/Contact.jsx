@@ -1,4 +1,3 @@
-import MapComponent from '../components/MapComponent';
 import '../components/css/Contact.css'
 
 function Contact() {

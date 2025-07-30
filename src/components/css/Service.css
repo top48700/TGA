@@ -1,8 +1,13 @@
-.serv-title{
+.serv-title {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    color: green;
+    color: #056839;
+    font-family: 'Prompt', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .knowledge-grid {
@@ -11,18 +16,10 @@
     gap: 24px;
     padding: 40px;
     margin-bottom: 52px;
-}
-
-@media (max-width: 1024px) {
-    .knowledge-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 640px) {
-    .knowledge-grid {
-        grid-template-columns: 1fr;
-    }
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
 .article-card {
@@ -31,43 +28,93 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     padding: 20px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 400px;
 }
 
 .article-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .article-image {
     width: 100%;
-    height: 300px;
-    object-fit: fill;
-    border-radius: 20px;
-    margin-bottom: 12px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-image {
+    transform: scale(1.05);
+}
+
+.article-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #056839;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-family: 'Prompt', sans-serif;
+}
+
+.article-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex: 1;
 }
 
 .learn-more {
-    color: red;
+    color: #e74c3c;
     font-weight: bold;
     font-size: 14px;
+    align-self: flex-start;
+    padding: 8px 16px;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* Modal เต็มจอ */
+.learn-more:hover {
+    background: #e74c3c;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 999;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .modal-box {
-    width: 90%;
+    width: 100%;
     max-width: 960px;
     background: #fff;
     border-radius: 20px;
@@ -76,44 +123,63 @@
     animation: zoomIn 0.3s ease;
     max-height: 90vh;
     overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .modal-box img {
     width: 100%;
-    max-height: 300px;
+    max-height: 400px;
     object-fit: contain;
+    border-radius: 12px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .modal-box h2 {
-    margin-bottom: 12px;
-    font-size: 1.5rem;
-    color: #222;
+    margin-bottom: 16px;
+    font-size: 1.8rem;
+    color: #056839;
+    font-family: 'Prompt', sans-serif;
+    font-weight: bold;
+    line-height: 1.3;
 }
 
 .modal-box p {
     font-size: 1rem;
     color: #444;
+    line-height: 1.7;
+    margin-bottom: 12px;
 }
 
 .close-btn {
     position: absolute;
     top: 16px;
     right: 20px;
-    font-size: 24px;
-    background: none;
+    font-size: 28px;
+    background: rgba(0,0,0,0.1);
     border: none;
-    color: #999;
+    color: #666;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #e74c3c;
+    color: white;
+    transform: rotate(90deg);
 }
 
 .article-detail p {
-  margin: 0.5rem 0;
-  line-height: 1.6;
+    margin: 0.8rem 0;
+    line-height: 1.7;
+    color: #555;
 }
-
-
-
 
 @keyframes zoomIn {
     from {
@@ -123,5 +189,214 @@
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+/* Tablet Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .knowledge-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 30px 20px;
+    }
+    
+    .serv-title {
+        font-size: 1.8rem;
+        margin-top: 15px;
+    }
+    
+    .article-card {
+        min-height: 380px;
+        padding: 18px;
+    }
+    
+    .article-image {
+        height: 180px;
+    }
+    
+    .modal-box {
+        padding: 30px;
+        max-width: 90%;
+    }
+    
+    .modal-box h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .serv-title {
+        font-size: 1.6rem;
+        margin-top: 15px;
+        padding: 0 15px;
+    }
+    
+    .knowledge-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 15px;
+        margin-bottom: 30px;
+    }
+    
+    .article-card {
+        min-height: 350px;
+        padding: 16px;
+        border-radius: 12px;
+    }
+    
+    .article-image {
+        height: 160px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .article-title {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .article-description {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+    
+    .learn-more {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    /* Mobile Modal */
+    .modal-overlay {
+        padding: 10px;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    
+    .modal-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        max-height: 95vh;
+        margin-top: 20px;
+    }
+    
+    .modal-box img {
+        max-height: 250px;
+        margin-bottom: 15px;
+    }
+    
+    .modal-box h2 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+    
+    .modal-box p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .close-btn {
+        top: 12px;
+        right: 15px;
+        font-size: 24px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .article-detail p {
+        margin: 0.6rem 0;
+        line-height: 1.6;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile Responsive Styles */
+@media screen and (max-width: 480px) {
+    .serv-title {
+        font-size: 1.4rem;
+        padding: 0 10px;
+    }
+    
+    .knowledge-grid {
+        padding: 15px 10px;
+        gap: 15px;
+    }
+    
+    .article-card {
+        min-height: 320px;
+        padding: 14px;
+        border-radius: 10px;
+    }
+    
+    .article-image {
+        height: 140px;
+        margin-bottom: 10px;
+    }
+    
+    .article-title {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .article-description {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .learn-more {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+    
+    .modal-box {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .modal-box img {
+        max-height: 200px;
+        margin-bottom: 12px;
+    }
+    
+    .modal-box h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .modal-box p {
+        font-size: 0.85rem;
+    }
+    
+    .close-btn {
+        top: 10px;
+        right: 12px;
+        font-size: 20px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .article-card,
+    .article-image,
+    .learn-more,
+    .close-btn,
+    .modal-box {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .article-card {
+        border: 2px solid #056839;
+    }
+    
+    .modal-box {
+        border: 2px solid #056839;
     }
 }

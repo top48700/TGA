@@ -1,19 +1,267 @@
-.about-us h1{
+.about-us {
+    font-family: 'Prompt', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.about-us h1 {
     margin-top: 80px;
     display: flex;
     justify-content: center;
     color: #056839;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.2;
 }
-.about-us p{
+
+.about-us p {
     display: flex;
     justify-content: center;
+    text-align: center;
     font-size: 18px;
-    color: gray;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
 }
-.about-image{
+
+.about-image {
     display: flex;
     justify-content: center;
-    height: 300px;
-    margin: 50px;
-    opacity: 0.8;
+    align-items: center;
+    height: 400px;
+    margin: 50px auto;
+    opacity: 0.9;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Content sections for better structure */
+.about-content {
+    margin-bottom: 40px;
+}
+
+.about-highlight {
+    background: linear-gradient(135deg, #056839, #8CC63E);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 40px 0;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(5, 104, 57, 0.2);
+}
+
+.about-highlight h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-highlight p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 0;
+}
+
+/* Tablet Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .about-us {
+        padding: 0 15px;
+    }
+    
+    .about-us h1 {
+        margin-top: 60px;
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+    }
+    
+    .about-us p {
+        font-size: 17px;
+        padding: 0 15px;
+        margin-bottom: 18px;
+    }
+    
+    .about-image {
+        height: 350px;
+        margin: 40px auto;
+        border-radius: 12px;
+    }
+    
+    .about-highlight {
+        padding: 35px;
+        margin: 35px 0;
+        border-radius: 15px;
+    }
+    
+    .about-highlight h2 {
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+    }
+    
+    .about-highlight p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .about-us {
+        padding: 0 10px;
+    }
+    
+    .about-us h1 {
+        margin-top: 40px;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    
+    .about-us p {
+        font-size: 16px;
+        padding: 0 10px;
+        margin-bottom: 15px;
+        text-align: left;
+        justify-content: flex-start;
+    }
+    
+    .about-image {
+        height: 250px;
+        margin: 30px 10px;
+        border-radius: 10px;
+    }
+    
+    .about-content {
+        margin-bottom: 30px;
+    }
+    
+    .about-highlight {
+        padding: 25px 20px;
+        margin: 25px 0;
+        border-radius: 12px;
+    }
+    
+    .about-highlight h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    
+    .about-highlight p {
+        font-size: 0.9rem;
+        text-align: left;
+        justify-content: flex-start;
+    }
+}
+
+/* Small Mobile Responsive Styles */
+@media screen and (max-width: 480px) {
+    .about-us {
+        padding: 0 8px;
+    }
+    
+    .about-us h1 {
+        margin-top: 30px;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        padding: 0 5px;
+    }
+    
+    .about-us p {
+        font-size: 14px;
+        padding: 0 5px;
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+    
+    .about-image {
+        height: 200px;
+        margin: 20px 5px;
+        border-radius: 8px;
+    }
+    
+    .about-content {
+        margin-bottom: 25px;
+    }
+    
+    .about-highlight {
+        padding: 20px 15px;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+    
+    .about-highlight h2 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .about-highlight p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 360px) {
+    .about-us h1 {
+        font-size: 1.3rem;
+        margin-top: 25px;
+    }
+    
+    .about-us p {
+        font-size: 13px;
+    }
+    
+    .about-image {
+        height: 180px;
+        margin: 15px 5px;
+    }
+    
+    .about-highlight {
+        padding: 15px 12px;
+    }
+    
+    .about-highlight h2 {
+        font-size: 1.1rem;
+    }
+    
+    .about-highlight p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .about-image,
+    .about-image img {
+        transition: none;
+    }
+    
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .about-us p {
+        color: #333;
+    }
+    
+    .about-highlight {
+        border: 2px solid #056839;
+    }
 }

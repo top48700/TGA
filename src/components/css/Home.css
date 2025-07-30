@@ -19,55 +19,69 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(40%, -50%);
+  transform: translate(-20%, -50%);
   color: gray;
   text-align: center;
   padding: 20px;
+  width: 90%;
+  box-sizing: border-box;
 }
-.btn-intro{
-    height: 40px;
-    width: 120px;
-    border-radius: 20px ;
-    font-weight: bold;
-    border-color: #056839;
-    color: #056839;
-    transition: background-color 0.3s ease, color 0.3s ease;
+
+.btn-intro {
+  height: 40px;
+  width: 120px;
+  border-radius: 20px;
+  font-weight: bold;
+  border-color: #056839;
+  color: #056839;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid #056839;
+  background: transparent;
+  cursor: pointer;
 }
-.btn-intro:hover{
-    background-color: #056839;
-    color: white;
+
+.btn-intro:hover {
+  background-color: #056839;
+  color: white;
 }
+
 .about-bg {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* เปลี่ยนจาก center */
+  justify-content: flex-start;
   background-color: #056839;
   border-radius: 0 0 20% 20%;
   padding: 20px;
   gap: 10px;
   overflow: hidden;
 }
-.txt-about{
-    display: flex;
-    margin: 0;
-    justify-content: center;
-    padding-top: 10px;
+
+.txt-about {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  padding-top: 10px;
 }
-.btn-about{
-    height: 40px;
-    width: 120px;
-    border-radius: 20px ;
-    margin: 3px;
-    font-weight: bold;
-    border-color: black;
-    color: #056839;
-    transition: background-color 0.3s ease, color 0.3s ease;
+
+.btn-about {
+  height: 40px;
+  width: 120px;
+  border-radius: 20px;
+  margin: 3px;
+  font-weight: bold;
+  border: 2px solid black;
+  color: #056839;
+  background: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
-.btn-about:hover{
-    background-color: #056839;
-    color: white;
+
+.btn-about:hover {
+  background-color: #056839;
+  color: white;
 }
+
 .our-service {
   display: grid;
   grid-template-columns: 1fr 6px 1fr;
@@ -92,7 +106,7 @@
 }
 
 .v1 {
-  background-color: green;
+  background-color: #056839;
   width: 6px;
   height: 100%;
   justify-self: center;
@@ -115,7 +129,7 @@
 
 .service-card {
   display: flex;
-  background: #8CC63E;
+  background: #056839;
   border-radius: 20px;
   height: auto;
   max-width: 800px;
@@ -149,19 +163,14 @@
   box-sizing: border-box;
 }
 
-.img-container img{
-  display: flex;
-  object-fit: cover;
-  height: 100px;
-  width: 200px;
-  border-radius: 20px;
-}
-.exp-img img{
+.exp-img img {
   width: 100%;
   height: 400px;
-  opacity: 0.6 ;
+  opacity: 0.6;
+  object-fit: cover;
 }
-.exp-txt{
+
+.exp-txt {
   position: absolute;
   display: flex;
   justify-content: space-evenly;
@@ -173,10 +182,12 @@
   width: 90%;
   font-size: 20px;
 }
-.exp-img{
+
+.exp-img {
   position: relative;
   width: 100%;
 }
+
 .about-detail {
   color: white;
   text-align: center;
@@ -197,12 +208,13 @@
   text-align: center;
   width: 100%;
   max-width: 800px;
-  height: 850px; /* ✅ กำหนดความสูงคงที่หรือใกล้เคียง */
-  overflow-y: auto; /* ✅ ให้ scroll ถ้าข้อความเกิน */
-  background: #8CC63E;
+  height: 850px;
+  overflow-y: auto;
+  background: #056839;
   border-radius: 10%;
   box-sizing: border-box;
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -218,12 +230,11 @@
   animation: fadeInUp 0.6s ease-in-out;
 }
 
-
 .service-title {
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #064d2d;
+  color: white;
 }
 
 .bullet-list {
@@ -231,7 +242,7 @@
   padding-left: 20px;
   margin-bottom: 30px;
   font-size: 18px;
-  color: black;
+  color: white;
   line-height: 1.6;
   list-style-type: disc;
   max-height: auto;
@@ -250,34 +261,35 @@
 }
 
 .partner {
-    padding: 40px 0;
-    background-color: #fff;
+  padding: 40px 0;
+  background-color: #fff;
 }
 
 .partner h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #006400; /* สีเขียวเข้ม */
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #006400;
 }
 
 .partner-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .partner-wrapper button {
-    background-color: transparent;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #006400;
-    transition: transform 0.2s ease;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #006400;
+  transition: transform 0.2s ease;
 }
 
 .partner-wrapper button:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .partner-logos {
@@ -286,7 +298,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .partner-wrapper img {
@@ -300,7 +312,211 @@
   opacity: 1;
   transform: scale(1.1);
 }
-.partner-h2{
+
+.partner-h2 {
   display: flex;
   justify-content: center;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .intro-img {
+    height: 300px;
+  }
+  
+  .intro-txt {
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .btn-intro, .btn-about {
+    height: 35px;
+    width: 100px;
+    font-size: 12px;
+  }
+  
+  .about-bg {
+    border-radius: 0 0 10% 10%;
+    padding: 15px;
+  }
+  
+  .our-service {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    margin: 20px 10px;
+    padding: 20px 10px;
+    border-radius: 30px;
+    border: 4px solid #056839;
+  }
+  
+  .left-dialog h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .v1 {
+    width: 100%;
+    height: 4px;
+    margin: 15px 0;
+  }
+  
+  .right-dialog {
+    gap: 15px;
+  }
+  
+  .service-wrapper {
+    padding: 5px;
+  }
+  
+  .service-card {
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+  }
+  
+  .img-container img {
+    height: 80px;
+    width: 120px;
+  }
+  
+  .detail {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .exp-img img {
+    height: 250px;
+  }
+  
+  .exp-txt {
+    top: 30%;
+    left: 5%;
+    width: 90%;
+    font-size: 14px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .service-display {
+    max-width: 95%;
+    height: auto;
+    min-height: 400px;
+    border-radius: 20px;
+    padding: 15px;
+  }
+  
+  .service-title {
+    font-size: 20px;
+  }
+  
+  .bullet-list {
+    font-size: 14px;
+    padding-left: 15px;
+  }
+  
+  .preview-img {
+    width: 90%;
+  }
+  
+  .partner {
+    padding: 20px 0;
+  }
+  
+  .partner h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .partner-wrapper {
+    gap: 15px;
+    padding: 0 10px;
+  }
+  
+  .partner-wrapper button {
+    font-size: 1.5rem;
+  }
+  
+  .partner-logos {
+    gap: 15px;
+  }
+  
+  .partner-wrapper img {
+    max-width: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .intro-img {
+    height: 250px;
+  }
+  
+  .intro-txt {
+    font-size: 12px;
+    padding: 5px;
+  }
+  
+  .btn-intro, .btn-about {
+    height: 30px;
+    width: 90px;
+    font-size: 11px;
+  }
+  
+  .our-service {
+    margin: 15px 5px;
+    padding: 15px 5px;
+    border-radius: 20px;
+  }
+  
+  .left-dialog h1 {
+    font-size: 18px;
+  }
+  
+  .service-card {
+    padding: 10px;
+  }
+  
+  .img-container img {
+    height: 80px;
+    width: 300px;
+  }
+  
+  .exp-img img {
+    height: 200px;
+  }
+  
+  .exp-txt {
+    font-size: 12px;
+    padding: 10px;
+  }
+  
+  .service-display {
+    padding: 10px;
+    border-radius: 15px;
+  }
+  
+  .service-title {
+    font-size: 18px;
+  }
+  
+  .bullet-list {
+    font-size: 12px;
+  }
+  
+  .partner h2 {
+    font-size: 1.2rem;
+  }
+  
+  .partner-wrapper {
+    gap: 10px;
+  }
+  
+  .partner-wrapper img {
+    max-width: 80px;
+  }
+  
+  .partner-logos {
+    gap: 10px;
+  }
 }
