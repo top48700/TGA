@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 
 function Content() {
     const [selectedCard, setSelectedCard] = useState(null);
-      const { t } = useTranslation('service');
+      const { t } = useTranslation('content');
       const rawArticles = t('articles', { returnObjects: true });
-      const articles = Array.isArray(rawArticles) ? rawArticles : [];
+      const content = Array.isArray(rawArticles) ? rawArticles : [];
     
       const handleOpen = (index) => setSelectedCard(index);
       const handleClose = () => setSelectedCard(null);
@@ -14,12 +14,12 @@ function Content() {
       return (
         <>
           <div className="serv-title">
-            <h1>บริการของเรา</h1>
+            <h1>ความรู้เพิ่มเติม</h1>
           </div>
     
           <section>
             <div className="knowledge-grid">
-              {articles.map((item, index) => (
+              {content.map((item, index) => (
                 <div
                   className="article-card"
                   key={index}
@@ -46,16 +46,16 @@ function Content() {
                       {t('close')}
                     </button>
                     <img
-                      src={articles[selectedCard].image}
-                      alt={articles[selectedCard].title}
+                      src={content[selectedCard].image}
+                      alt={content[selectedCard].title}
                     />
-                    <h2>{articles[selectedCard].title}</h2>
+                    <h2>{content[selectedCard].title}</h2>
                     <div className="article-detail">
-                      {Array.isArray(articles[selectedCard].detail)
-                        ? articles[selectedCard].detail.map((line, i) => (
+                      {Array.isArray(content[selectedCard].detail)
+                        ? content[selectedCard].detail.map((line, i) => (
                             <p key={i}>{line}</p>
                           ))
-                        : articles[selectedCard].detail
+                        : content[selectedCard].detail
                             .split('\n')
                             .map((line, i) => <p key={i}>{line.trim()}</p>)}
                     </div>
