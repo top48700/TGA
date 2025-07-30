@@ -23,9 +23,12 @@ function Header() {
     return (
         <div className="header">
             <div className="logo">
-                <span>
-                    <img src={TGA} width={220} height={120} alt="TGA Logo" />
-                </span>
+                <Link to="/">
+                    <span>
+                        <img src={TGA} width={220} height={120} alt="TGA Logo" />
+                    </span>
+                </Link>
+
             </div>
 
             {/* Desktop Navigation */}
@@ -42,7 +45,7 @@ function Header() {
             </div>
 
             {/* Mobile Menu Toggle Button */}
-            <button 
+            <button
                 className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
                 onClick={toggleMobileMenu}
                 aria-label="Toggle mobile menu"
@@ -53,7 +56,7 @@ function Header() {
             </button>
 
             {/* Mobile Navigation Overlay */}
-            <div 
+            <div
                 className={`nav-overlay ${isMobileMenuOpen ? 'active' : ''}`}
                 onClick={handleOverlayClick}
             >

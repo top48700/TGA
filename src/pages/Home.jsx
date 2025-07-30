@@ -1,5 +1,6 @@
 import introduce from '../assets/home-introduce.jpg'
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../components/css/Home.css'
 import T1 from '/tax-1.jpg'
 import T2 from '/tex-2.jpg'
@@ -15,10 +16,6 @@ function Home() {
     const [selectedService, setSelectedService] = useState(null);
 
     const partners = [
-        { src: P1, alt: 'กระทรวงแรงงาน' },
-        { src: P2, alt: 'กรมพัฒนาธุรกิจการค้า' },
-        { src: P3, alt: 'กรมสรรพากร' },
-        { src: P4, alt: 'สำนักงานประกันสังคม' },
         { src: P1, alt: 'กระทรวงแรงงาน' },
         { src: P2, alt: 'กรมพัฒนาธุรกิจการค้า' },
         { src: P3, alt: 'กรมสรรพากร' },
@@ -67,7 +64,10 @@ function Home() {
                         <h1>เป็นสำนักงานบัญชี ที่ให้บริการด้าน</h1>
                         <h1>การจัดทำบัญชี และภาษีอากรแบบครบวงจร</h1>
                         <h1 style={{ color: 'green' }}>TRIPLE GREEN ACCCOUNTING</h1>
+                        <Link to="/service">
                         <button className='btn-intro'>More detail...</button>
+                        </Link>
+                        
                     </div>
                 </div>
             </section>
@@ -237,13 +237,13 @@ function Home() {
             <section className="partner">
             <h2 className='partner-h2'>Our Partner</h2>
             <div className="partner-wrapper">
-                <button onClick={handlePrev}>{'<'}</button>
+                <button onClick={handlePrev} style={{ fontSize: 80 }}>{'<'}</button>
                 <div className="partner-logos">
                     {visiblePartners.map((partner, idx) => (
                         <img key={idx} src={partner.src} alt={partner.alt} />
                     ))}
                 </div>
-                <button onClick={handleNext}>{'>'}</button>
+                <button onClick={handleNext} style={{ fontSize: 80 }}>{'>'}</button>
             </div>
         </section>
 
