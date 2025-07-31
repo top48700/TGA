@@ -239,6 +239,7 @@
     .mobile-nav-menu .bg {
         min-width: 180px;
         padding: 12px 25px;
+        color: white;
     }
     
     .mobile-nav-menu .bg a {
