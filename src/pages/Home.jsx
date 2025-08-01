@@ -27,7 +27,7 @@ function Home() {
                 'เพื่อป้องกันการทุจริต และสามารถตรวจสอบได้ง่าย',
                 'เพื่อลดค่าใช้จ่ายบุคลากรที่เกินความจำเป็น',
             ],
-            image: T1
+            image: T3
         },
         {
             title: 'บริการด้านภาษีอากร',
@@ -69,7 +69,7 @@ function Home() {
                 'จดทะเบียนใบอนุญาตส่งเสริมการลงทุน (BOI)',
                 'จดทะเบียน, ขอใหม่, ต่ออายุ, เปลี่ยนแปลงใบอนุญาตทำงานคนต่างด้าวและวีซ่า (Work permit and Visa)'
             ],
-            image: T3
+            image: T1
         }
     ]
 
@@ -166,7 +166,7 @@ function Home() {
             </section>
             <section className="about">
                 <div className="about-bg">
-                    <h1 style={{ color: 'white' }} className="txt-about">เกี่ยวกับเรา TGA</h1>
+                    <h1 style={{ color: 'white', fontSize: 36 }} className="txt-about">เกี่ยวกับเรา TGA</h1>
                     <div
                         ref={detailRef}
                         className={`about-detail ${isExpanded ? 'expanded' : ''}`}
@@ -183,7 +183,7 @@ function Home() {
                         <p>มีประสบการณ์และความชำนาญในงานที่ให้บริการแต่ละด้านโดยตรง</p>
                     </div>
                     <button className="btn-about" onClick={toggleExpand}>
-                        {isExpanded ? 'Less detail...' : 'More detail...'}
+                        {isExpanded ? 'Less' : 'More'}
                     </button>
                 </div>
             </section>
